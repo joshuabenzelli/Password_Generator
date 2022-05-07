@@ -9,12 +9,16 @@ function writePassword() {
   var LowerCase = "abcdefghijklmnopqrstuvwxyz".split('');
   var Symbols = "!@#$?".split('');
   var Numbers = "0123456789".split('');
-  var numofchardes = window.prompt("How long would you like the password to be?");
+  var numofchardes = window.prompt("How long would you like the password to be? Pick a length between 8 and 128.");
+  var numofchar = Number(numofchardes, 10);
+  if (numofchar < 8 || numofchar > 128){
+    alert("Please choose a length between 8 and 128.");
+    return;
+  }
   var upperyn = window.confirm("Would you like uppercase letters?");
   var loweryn = window.confirm("Would you like lowercase letters?");
   var symbolyn = window.confirm("Would you like any symbols?");
   var numyn = window.confirm("Would you like any numbers?");
-  var numofchar = Number(numofchardes, 10);
   var password = generatePassword();
   
   
